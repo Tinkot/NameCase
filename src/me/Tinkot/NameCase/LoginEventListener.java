@@ -30,9 +30,9 @@ public class LoginEventListener implements Listener {
 			// canceling the event
 			event.setCancelReason(message);
 			event.setCancelled(true);
-		}
+
 		// To check if his name is not below than 3 characters.
-		if (name.length() < 3) {
+		} else if (name.length() < 3) {
 			TextComponent message = new TextComponent("ERROR: ");
 			message.setColor(ChatColor.RED);
 			TextComponent reason = new TextComponent("Your username is below 3 characters.");
@@ -41,9 +41,9 @@ public class LoginEventListener implements Listener {
 			// canceling the event
 			event.setCancelReason(message);
 			event.setCancelled(true);
-		}
+
 		// To check if his name does not contain illegal characters.
-		if (!name.matches("[a-zA-Z0-9_]*")) {
+		} else if (!name.matches("[a-zA-Z0-9_]*")) {
 			TextComponent message = new TextComponent("ERROR: ");
 			message.setColor(ChatColor.RED);
 			TextComponent reason = new TextComponent("Your contains illegal characters.");
@@ -52,23 +52,23 @@ public class LoginEventListener implements Listener {
 			// canceling the event
 			event.setCancelReason(message);
 			event.setCancelled(true);
-		}
+		} else {
+		
+			// requesting name to database
+			SqliteDB db = new SqliteDB();
+			String realName = db.getRealName(name);
+			db.closeConnection();
+			// checking if name is not equal
+			if (!name.equals(realName)) {
+				TextComponent message = new TextComponent("ERROR: ");
+				message.setColor(ChatColor.RED);
+				TextComponent reason = new TextComponent("You previously logged in using: '" + realName + "'");
+				reason.setColor(ChatColor.DARK_RED);
+				message.addExtra(reason);
 
-		// requesting name to database
-		SqliteDB db = new SqliteDB();
-		String realName = db.getRealName(name);
-		db.closeConnection();
-		// checking if name is not equal
-		if (!name.equals(realName)) {
-			TextComponent message = new TextComponent("ERROR: ");
-			message.setColor(ChatColor.RED);
-			TextComponent reason = new TextComponent("You previously logged in using: '" + realName + "'");
-			reason.setColor(ChatColor.DARK_RED);
-			message.addExtra(reason);
-
-			event.setCancelReason(message);
-			event.setCancelled(true);
+				event.setCancelReason(message);
+				event.setCancelled(true);
+			}
 		}
 	}
-
 }
