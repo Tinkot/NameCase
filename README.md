@@ -6,3 +6,8 @@ This plugin fixes the problem when a user tries to join using a mistyped name, w
 
 you NEED to have the sqlite drivers installed on your bungeecord server. bungeecord does NOT support sqlite by default.
 You can add the drivers manually to your BungeeCord.jar or use this plugin which requires no installation -> https://www.spigotmc.org/resources/sqlite-for-bungeecord.57191/
+
+
+
+
+[more info about namecase](https://www.spigotmc.org/resources/namecase.62586/)
