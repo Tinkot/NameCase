@@ -10,10 +10,8 @@ import net.md_5.bungee.event.EventHandler;
 import net.md_5.bungee.event.EventPriority;
 
 public class LoginEventListener implements Listener {
-	private final NameCase plugin;
 
-	public LoginEventListener(NameCase plugin) {
-		this.plugin = plugin;
+	public LoginEventListener() {
 	}
 
 	@EventHandler(priority = EventPriority.LOW)
@@ -46,7 +44,7 @@ public class LoginEventListener implements Listener {
 		} else if (!name.matches("[a-zA-Z0-9_]*")) {
 			TextComponent message = new TextComponent("ERROR: ");
 			message.setColor(ChatColor.RED);
-			TextComponent reason = new TextComponent("Your contains illegal characters.");
+			TextComponent reason = new TextComponent("Your username contains illegal characters.");
 			reason.setColor(ChatColor.DARK_RED);
 			message.addExtra(reason);
 			// canceling the event
@@ -62,7 +60,7 @@ public class LoginEventListener implements Listener {
 			if (!name.equals(realName)) {
 				TextComponent message = new TextComponent("ERROR: ");
 				message.setColor(ChatColor.RED);
-				TextComponent reason = new TextComponent("You previously logged in using: '" + realName + "'");
+				TextComponent reason = new TextComponent("You username previously logged in using: '" + realName + "'");
 				reason.setColor(ChatColor.DARK_RED);
 				message.addExtra(reason);
 
