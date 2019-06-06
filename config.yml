@@ -1,0 +1,13 @@
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * #
+#                                                                 #
+#         *  Feel free to check out my other resources  *         #
+#                                                                 #
+#  * https://www.spigotmc.org/members/tinkot.617149/#resources *  #
+#                                                                 #
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * #
+
+
+TOO_LONG: '&cERROR: &4Your username is longer than 16 characters.'
+TOO_SHORT: '&cERROR: &4our username is below 3 characters.'
+ILLEGAL_CHARS: '&cERROR: &4Your username contains illegal characters.'
+NAMECASE: '&cERROR: &4You previously logged in using: <name>'
