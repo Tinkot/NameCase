@@ -1,9 +1,8 @@
-*
-*.settings
-*.project
-*.gitignore
-*.classpath
-*.DS_Store
+*settings
+*project
+*gitignore
+*classpath
+*DS_Store
 
 # Compiled class file
 *.class
