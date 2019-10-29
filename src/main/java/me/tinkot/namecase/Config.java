@@ -12,9 +12,6 @@ import net.md_5.bungee.config.YamlConfiguration;
 
 /**
  * @author tjeerdvandijk
- * This class belongs to the BUNGEECORD side of this plugin.
- * The spigot package also has a class named Config with the same methods.
- * they are seperated since bungee and spigot have different methods for the configuration.
  */
 public class Config {
 	private Configuration configuration;
