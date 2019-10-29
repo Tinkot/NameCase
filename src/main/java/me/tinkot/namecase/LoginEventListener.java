@@ -15,6 +15,7 @@ public class LoginEventListener implements Listener {
 		PASSED, TOO_LONG, TOO_SHORT, ILLEGAL, NAMECASE
 	}
 
+	private static final Case DEFAULT_CASE = Case.PASSED
 	private Config config;
 	private NameCase plugin;
 
@@ -29,7 +30,7 @@ public class LoginEventListener implements Listener {
 		ProxyServer.getInstance().getScheduler().runAsync(plugin, new Runnable() {
 			public void run() {
 				
-				Case reason = Case.PASSED;	
+				Case reason = DEFAULT_CASE;	
 
 				String loginName = event.getConnection().getName();
 				String realName  = new DataJob().getRealName(loginName);
